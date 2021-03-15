@@ -12,7 +12,7 @@ void loop() {
  Serial.println(magnetSensor);
   if(magnetSensor == HIGH){
     Serial.println("Loin");
-  }
+  }n
   else{
     Serial.println("Prêt");
   }
