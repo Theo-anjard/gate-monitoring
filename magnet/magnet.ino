@@ -1,20 +1,22 @@
-int sensorPin = 26;
-int magnetSensor; 
+const int sensor = 26;
+  
+int state; // 0 close - 1 open wwitch
 
-void setup(){
+void setup()
+{
   Serial.begin(9600);
-  pinMode(sensorPin, INPUT);
-  digitalWrite(sensorPin, HIGH);
+  pinMode(sensor, INPUT_PULLUP);
 }
 
-void loop() {
-  magnetSensor = digitalRead(sensorPin);  // find out switch state by reading input pin
- Serial.println(magnetSensor);
-  if(magnetSensor == HIGH){
-    Serial.println("Loin");
-  }n
+void loop()
+{
+  state = digitalRead(sensor);
+  
+  if (state == HIGH){
+     Serial.println("Loin");
+  }
   else{
-    Serial.println("Prêt");
+     Serial.println("Près");
   }
   delay(200);
 }
